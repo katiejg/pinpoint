@@ -6,19 +6,15 @@ import { Text, View } from '@/components/Themed';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <View style={[styles.container, styles.view]}>
+      <View style={[styles.header, styles.view]}>
         <Image source={require('../../assets/profile.jpeg')} style={[styles.image, styles.hSpace]}/>
         <Text style={[styles.bodyText, styles.hSpace]}>Current Location{"\n"}Evanston, IL</Text>
-        <Ionicons name="notifications" size={24} color="white" style={[styles.hSpace]}/>
+        <Ionicons name="notifications" size={24} color="black" style={[styles.hSpace]}/>
 
         </View>
-        <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="useless placeholder"
-        keyboardType="numeric"/>
+        <TextInput style={styles.input} placeholder="Search by" />
+
 
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="white" />
@@ -29,6 +25,9 @@ export default function TabOneScreen() {
 }
 
 const styles = StyleSheet.create({
+  view: {
+    backgroundColor: '#FFFFFF',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -44,20 +43,22 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     textAlign: 'center',
+    color: 'black',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
   },
   input: {
-    height: 40,
-    margin: 12,
+    borderColor: "gray",
+    width: "75%",
     borderWidth: 1,
+    borderRadius: 10,
     padding: 10,
   },
   searchBar: {
-    marginTop: 30, 
-    padding: 2, 
+    // marginTop: 30, 
+    // padding: 2, 
   },
   separator: {
     marginVertical: 30,
