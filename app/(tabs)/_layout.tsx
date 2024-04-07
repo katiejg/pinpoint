@@ -1,5 +1,6 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 
@@ -17,6 +18,10 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+
+  const [fontsLoaded, fontError] = useFonts({
+    'Lexend': require('../../assets/fonts/Lexend-VariableFont_wght.ttf'),
+  });
 
   return (
     <Tabs
